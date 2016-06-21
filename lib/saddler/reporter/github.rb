@@ -24,3 +24,9 @@ module Saddler
     end
   end
 end
+
+unless ENV['GITHUB_API_ENDPOINT'].nil?
+  Octokit.configure do |c|
+    c.api_endpoint = ENV['GITHUB_API_ENDPOINT']
+  end
+end
